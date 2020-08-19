@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main() {
+   int n,r,x,y,i,a;
+   int c[1000000],s[1000000];
+   scanf("%d %d %d %d",&n,&r,&x,&y);
+   a=r;
+   for(i=0;i<n;i++)
+   scanf("%d",&c[i]);
+   for(i=0;i<n;i++)
+   {
+       scanf("%d",&s[i]);
+   
+       if(c[i])
+       {
+           if(s[i])
+           a=a+x;
+           else
+           a=a-y;
+           
+       }
+   }
+   if(a>r)
+   printf("Promoted");
+   else if(a<r)
+   printf("Demoted");
+   else
+   printf("No change");
+    return 0;
+}

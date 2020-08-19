@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int count=0;
+void dos(int l,string x)
+{
+    int mid=l/2;
+    string s1=x.substr(0,mid);
+    string s2=x.substr(mid,2*mid);
+    if((mid!=0)&&(s1==s2))
+    {
+        count++;
+        dos(mid,s1);
+    }
+}
+int main() {
+ int n;
+ string s;
+ cin>>n;
+ cin>>s;
+ dos(n,s);
+ cout<<count;
+ return 0;
+}
