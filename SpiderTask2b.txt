@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include<string.h>
+int main() {
+  int n,q,i,lb,ub;
+  scanf("%d %d",&n,&q);
+  long long int a[100000],v,max;
+  memset(a,0,n);
+ for(i=0;i<q;i++)
+ {
+ 	scanf("%d %d %lld",&lb,&ub,&v);
+ 	a[(lb-1)]+=v;
+ 	a[ub]-=v;
+ }
+ a[0]++;
+ max=a[0];
+ for(i=1;i<n;i++)
+ {
+ 	a[i]+=(a[i-1]+1);
+ 	if(a[i]>max)
+ 	max=a[i];
+ }
+
+
+ printf("%lld",max);
+    return 0;
+}
