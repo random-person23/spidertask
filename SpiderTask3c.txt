@@ -1,0 +1,29 @@
+#include <iostream>
+#include<cstring>
+using namespace std;
+
+int main() {
+	bool prime[100001];
+	int i,p,n,count=0;
+	long int sum=0;
+	cin>>n;
+	memset(prime,true,sizeof(bool)*(n+1));
+	for(p=2;p*p<=n;p++)
+	{
+		if(prime[p]==true)
+		{
+			for(i=p*p;i<=n;i+=p)
+			prime[i]=false;
+		}
+	}
+
+	for(p=2;p<=n;p++){
+		if(prime[p])
+		{
+			count++;
+			sum+=count;
+		}
+	}
+    cout<<sum;
+	return 0;
+}
