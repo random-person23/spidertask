@@ -1,0 +1,24 @@
+#include <iostream>
+#include<string.h>
+using namespace std;
+int main() {
+   string n;
+  long int sum=0,count=0;
+   cin>>n;
+   if(n.length()==1)
+   count=0;
+   else{
+   	while(n.length()>1)
+   	{sum=0;
+   		 for(int i=0;i<n.length();i++)
+      {
+       sum+=(n[i]-'0');
+      }
+  count++;
+  n=to_string(sum);
+   	}
+  
+   }
+  cout<<count;
+    return 0;
+}
